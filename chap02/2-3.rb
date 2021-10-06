@@ -4,9 +4,9 @@ def sum_average(x,y)
     x = x
     y = y
     sum = x + y
-    average = (x + y)/2
+    average = sum/2
     puts "xの値は#{x}です。"
-    puts "xの値は#{y}です。"
+    puts "yの値は#{y}です。"
     puts "合計は#{sum}です。"
     puts "平均は#{average}です。"
 end
