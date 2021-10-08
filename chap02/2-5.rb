@@ -8,9 +8,9 @@
 # gets.chompで拾ってくると""で囲われたString型になっているので、条件は以下のようにしてみた。もっといい感じに書けないか。また考える。
 
 print '整数値: '
-text = gets.chomp
-if text == "#{text.to_i}"
-    puts "#{text}と入力しましたね。"
+input_number = gets.chomp
+if input_number == "#{input_number.to_i}"
+    puts "#{input_number}と入力しましたね。"
 else
     puts '整数値（半角）で入力されていません'
 end

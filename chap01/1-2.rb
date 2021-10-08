@@ -5,6 +5,8 @@
 def hello
     puts '初めてのRubyプログラム。'
     puts '画面に出力しています。'
-
+end
 
 puts hello
+
+# skip
