@@ -14,7 +14,7 @@ print "整数値: "
 number = gets.chomp.to_i
 
 if number < 0
-    puts "その絶対値は#{number * (-1)}です。"
+    puts "その絶対値は#{-number}です。"
 else
     puts "その絶対値は#{number}です。"
 end
