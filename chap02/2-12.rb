@@ -5,8 +5,10 @@
 # その値±5の乱数を生成しました。
 # 値は11です。
 
+# 整数値を読み込み
 print "整数値: "
 number = gets.chomp.to_i
+# ±の値それぞれで変数を定義
 number_add5 = number + 5
 number_minus5 = number - 5
 
