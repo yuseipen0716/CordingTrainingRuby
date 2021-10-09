@@ -30,3 +30,24 @@ def big_small
 end
 
 big_small
+
+# if文をネストしたことなかったから初挑戦。こちらの方がコードはすっきりしている？
+
+# print "整数値a: "
+# num_a = gets.chomp.to_i
+# print "整数値b: "
+# num_b = gets.chomp.to_i
+
+# if num_a == num_b
+#     puts '二つの値は同じです。'
+# else
+#     if num_a > num_b
+#         big = num_a
+#         small = num_b
+#     else
+#         big = num_b
+#         small = num_a
+#     end
+#     puts "小さい方の値は#{small}です。"
+#     puts "大きい方の値は#{big}です。"
+# end
