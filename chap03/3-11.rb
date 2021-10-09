@@ -24,3 +24,18 @@ elsif score >= 0 && score < 60
 else
     puts '不正な点数です'
 end
+
+
+# 解説にも書いてあったけれど、初めに不正な点数の条件をかいてやれば論理演算子初めの一回使うだけで済むので、よりシンプルに書ける。
+# if score < 0 || score > 100
+#     puts '不正な点数です'
+#     # 点数の低い方から条件を指定してあげる。
+# elsif score <= 59
+#     puts '不可'
+# elsif score <= 69
+#     puts '可'
+# elsif score <= 79
+#     puts '良'
+# else
+#     puts '優'
+# end
