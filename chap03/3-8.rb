@@ -9,10 +9,19 @@
 print "整数値: "
 number = gets.chomp.to_i
 
-if number > 0 && number % 5 == 0
-    puts 'その値は5で割り切れます。'
-elsif number > 0 && number % 5 != 0
-    puts 'その値は5で割り切れません。'
-else
-    puts '正でない値が入力されました。'
+# if number > 0 && number % 5 == 0
+#     puts 'その値は5で割り切れます。'
+# elsif number > 0 && number % 5 != 0
+#     puts 'その値は5で割り切れません。'
+# else
+#     puts '正でない値が入力されました。'
+# end
+
+if number > 0 
+    if number % 5 == 0
+        puts 'その値は5で割り切れます。'
+    elsif number % 5 != 0
+        puts 'その値は5で割り切れません。'
+    else
+        puts '正でない値が入力されました。'
 end

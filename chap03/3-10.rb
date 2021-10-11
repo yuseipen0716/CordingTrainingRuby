@@ -9,12 +9,24 @@
 print "整数値: "
 number = gets.chomp.to_i
 
-if number > 0 && number % 3 == 0
-    puts 'その値は3で割り切れます。'
-elsif number > 0 && number % 3 == 1
-    puts 'その値を3で割った余りは1です。'
-elsif number > 0 && number % 3 == 2
-    puts 'その値を3で割った余りは2です。'
-else
-    puts '正でない値が入力されました。'
-end
+# if number > 0 && number % 3 == 0
+#     puts 'その値は3で割り切れます。'
+# elsif number > 0 && number % 3 == 1
+#     puts 'その値を3で割った余りは1です。'
+# elsif number > 0 && number % 3 == 2
+#     puts 'その値を3で割った余りは2です。'
+# else
+#     puts '正でない値が入力されました。'
+# end
+
+if number > 0
+    if number % 3 == 0
+        puts 'その値は3で割り切れます。'
+    elsif number % 3 == 1
+        puts 'その値を3で割った余りは1です。'
+    elsif number % 3 == 2
+        puts 'その値を3で割った余りは2です。'
+    else
+        puts '正でない値が入力されました。'
+    end
+    

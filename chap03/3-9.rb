@@ -9,10 +9,19 @@
 print "整数値: "
 number = gets.chomp.to_i
 
-if number > 0 && number % 10 == 0
-    puts 'その値は10の倍数です。'
-elsif number > 0 && number % 10 != 0
-    puts 'その値は10の倍数ではありません。'
-else
-    puts '正でない値が入力されました。'
+# if number > 0 && number % 10 == 0
+#     puts 'その値は10の倍数です。'
+# elsif number > 0 && number % 10 != 0
+#     puts 'その値は10の倍数ではありません。'
+# else
+#     puts '正でない値が入力されました。'
+# end
+
+if number > 0 
+    if number % 10 == 0
+        puts 'その値は10の倍数です。'
+    elsif number % 10 != 0
+        puts 'その値は10の倍数ではありません。'
+    else
+        puts '正でない値が入力されました。'
 end
