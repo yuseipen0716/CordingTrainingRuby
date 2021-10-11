@@ -12,9 +12,13 @@ number_3digit = gets.chomp.to_i
 
 if number_3digit >= 100 && number_3digit <= 999
 else
-    until number_3digit >= 100 && number_3digit <= 999
+    while number_3digit >= 100 && number_3digit <= 999
         print "3桁の正の整数値: "
         number_3digit = gets.chomp.to_i
     end
 end
 puts "#{number_3digit}と入力しましたね"
+
+
+# untilのところをwhileで書くとこうかな
+# while number_3digit < 100 || number_3digit > 999
