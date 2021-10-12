@@ -16,6 +16,10 @@ if num_a > num_b
     big = num_a
     num_a = num_b
     num_b = big
+else num_a < num_b
+    big = num_b
+    num_b = num_a
+    num_a = num_b
 end
 
 #大きい方の数以下の整数を出力 num_a == bigとすると、num_a == bigとなったときに処理の繰り返しが終わってしまうので、最後の数を表示させるためにbig + 1 としてみた。
