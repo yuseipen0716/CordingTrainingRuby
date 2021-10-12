@@ -22,7 +22,7 @@ end
 #実行結果が10 11 12 13 14 15 16 17 18 19 20 %のように最後に%がつくのが気になる。
 until num_a == big +1
     print "#{num_a} "
-    num_a = num_a + 1
+    num_a += 1
 end
 
 
