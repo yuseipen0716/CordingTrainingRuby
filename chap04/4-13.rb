@@ -22,15 +22,12 @@ end
 
 i = 0
 # 変数i countdownと等しくなるまで繰り返し
-for i in i..countup
-    i += 1
-    # 0からcountupまでカウントアップ。カウントアップ1回目の処理の際、i+=1 によってi = 1となる。そのまま puts iと書くと、1, 2, 3, 4, 5とカウントアップしてしまうため、i-1する。
-    puts i - 1
+for i in 0..countup
+    puts i
 end
 
 # 前問同様、eachでも書いてみる。
 # i = 0
-# (i..countup).to_a.each do |i|
-#     i += 1
-#     puts i - 1
+# (0..countup).to_a.each do |i|
+#     puts i
 # end
