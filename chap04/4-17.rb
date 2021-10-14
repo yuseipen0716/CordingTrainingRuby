@@ -18,6 +18,6 @@ if counter > 0
     # 入力された数値分、＊を繰り返し。それを変数repeat_by_counterに格納（String)
     repeat_by_counter = '*' * counter
     # ＊５文字ごと分割。delete_ifで配列内の空文字を削除。joinで改行文字をつけて連結してputs
-    puts repeat_by_counter.split(/(\*{5})/).delete_if(&:empty?).join("\n")
+    puts repeat_by_counter.split(/(\*{5}|\*+$)/).delete_if(&:empty?).join("\n")
 end
 
