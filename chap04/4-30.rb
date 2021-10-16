@@ -24,7 +24,7 @@ puts '0-99の数を当ててください'
 # 範囲を(1..limit)とすると、limit < iとなる前に繰り返し処理が終わってしまう。今回はif文を使って条件を分け、limit < iとなった時に繰り返し処理から離脱するようにしたかったので、以下のようにした。
 (1..limit+1).to_a.each do |i|
     if limit < i
-        puts "正解は#{correct_number}です。\nゲームを終了します。"
+        puts "残念！正解は#{correct_number}でした。\nゲームを終了します。"
         break
     else
         print "残り#{limit - i + 1}回。いくつかな: "
