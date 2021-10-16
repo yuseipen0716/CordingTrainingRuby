@@ -32,7 +32,7 @@ puts '0-99の数を当ててください'
         if answer < 0 || answer > 99
             puts '0-99の数を当ててください'
         elsif answer == correct_number
-            puts "#{i}回で当たりましたね。"
+            puts "おめでとうございます。#{i}回で当たりましたね。"
             break
         elsif answer > correct_number
             puts 'もっと小さな数だよ'
