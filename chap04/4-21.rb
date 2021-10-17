@@ -12,6 +12,6 @@ puts '正方形を表示します。'
 print "段数は: "
 level = gets.chomp.to_i
 
-(1..level).to_a.each do |i|
+(1..level).each do |i|
     puts "#{'*' * level}"
 end

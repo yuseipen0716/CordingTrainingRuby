@@ -17,7 +17,7 @@ limit = gets.chomp.to_i
 sum = 0
 avg = 0
 negative = 0 
-(1..limit).to_a.each do |i|
+(1..limit).each do |i|
     print "整数 : "
     num = gets.chomp.to_i
     sum += num

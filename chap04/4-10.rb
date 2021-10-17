@@ -14,6 +14,6 @@ puts "1から#{number}までの積は#{product}です。"
 
 # each でやるならこう？
 # product = 1
-# (1..number).to_a.each do |num|
+# (1..number).each do |num|
 #     product = product * num
 # end

@@ -9,7 +9,7 @@ print "整数値: "
 num = gets.chomp.to_i
 
 counter = 0
-(1..num).to_a.each do |i|
+(1..num).each do |i|
     div = num/i
     # 1からnumまでiで割る繰り返し処理。割り切れる時はprintで半角スペースを付けて出力して、counterの数字を+1する。
     if num % i == 0

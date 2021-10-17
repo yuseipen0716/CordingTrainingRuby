@@ -31,7 +31,7 @@ end
 
 # 前問同様、eachでも書いてみる。
 # i = 0
-# (i..countdown).to_a.each do |i|
+# (i..countdown).each do |i|
 #     i += 1
 #     puts (countdown -= 1) + 1
 # end

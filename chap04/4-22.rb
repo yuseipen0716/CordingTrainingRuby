@@ -17,7 +17,7 @@ puts '左下直角の二等辺三角形を表示します。'
 print "段数は: "
 level = gets.chomp.to_i
 
-(1..level).to_a.each do |i|
+(1..level).each do |i|
     puts "#{'*' * i}"
 end
 
@@ -46,7 +46,7 @@ print "段数は: "
 level = gets.chomp.to_i
 
 
-(1..level).to_a.each do |i|
+(1..level).each do |i|
     puts "#{' ' * (i - 1) + '*' * (level - i +1) }"
 end
 
@@ -58,6 +58,6 @@ puts '右下直角の二等辺三角形を表示します。'
 print "段数は: "
 level = gets.chomp.to_i
 
-(1..level).to_a.each do |i|
+(1..level).each do |i|
     puts "#{' ' * (level - i) + '*' * i}"
 end

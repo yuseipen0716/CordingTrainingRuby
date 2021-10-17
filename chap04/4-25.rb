@@ -35,7 +35,7 @@ two_or_more = gets.chomp.to_i
 
 # 解説をみたらbreakを使って、割り切れた時点で繰り返し処理を離脱するようにしていた！！入力された値がとても大きい場合には全部を繰り返し除算する自分書いたプログラムはよろしくないですね。
 
-(2..two_or_more).to_a.each do |i|
+(2..two_or_more).each do |i|
     div = two_or_more % i 
     if i != two_or_more && div == 0
         puts 'それは素数ではありません。'

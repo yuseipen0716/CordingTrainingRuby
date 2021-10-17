@@ -23,7 +23,7 @@ end
 
 # if counter > 0
 #     i = 1
-#     (i..counter).to_a.each do |i|
+#     (i..counter).each do |i|
 #         i += 1
 #         print '*'
 #     end

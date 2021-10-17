@@ -9,7 +9,7 @@
 print "nの値: "
 num = gets.chomp.to_i
 
-(1..num).to_a.each do |i|
+(1..num).each do |i|
     square = i ** 2
     puts "#{i}の2乗は#{square}"
 end

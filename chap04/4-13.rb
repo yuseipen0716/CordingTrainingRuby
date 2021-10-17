@@ -28,6 +28,6 @@ end
 
 # 前問同様、eachでも書いてみる。
 # i = 0
-# (0..countup).to_a.each do |i|
+# (0..countup).each do |i|
 #     puts i
 # end

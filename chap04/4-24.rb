@@ -15,6 +15,6 @@ print "段数は: "
 level = gets.chomp.to_i
 
 # i % 10の部分は文字列化しておかないと、あとの乗算で整数値として計算されてしまう。
-(1..level).to_a.each do |i|
+(1..level).each do |i|
     puts "#{' ' * (level - i) + (i % 10).to_s * ((i-1) * 2 + 1)}"
 end

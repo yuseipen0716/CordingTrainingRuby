@@ -32,12 +32,12 @@ end
 
 # eachでも。
 # sum = 0
-# (1..num-1).to_a.each do |i|
+# (1..num-1).each do |i|
 #     sum += i
 #     print i.to_s + ' + '
 # end
 
-# (num..num).to_a.each do |n|
+# (num..num).each do |n|
 #     sum += n
 #     print n.to_s + ' = ' + sum.to_s
 # end

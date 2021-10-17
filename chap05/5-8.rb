@@ -15,7 +15,7 @@ puts '---------------------'
 increment_f = 0.0
 increment_i = 0
 puts "#{increment_f}     #{increment_i * 10 / 100}"
-(0..99).to_a.each do |i|
+(0..99).each do |i|
     increment_f += 0.01
     increment_i += 0.1
     puts "#{increment_f}     #{increment_i * 10 / 100}"

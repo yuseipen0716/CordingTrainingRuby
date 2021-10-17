@@ -19,7 +19,7 @@
 # increment_x = 0.000
 # square_x = 0.000
 # puts "#{increment_x}"
-# (1..1000).to_a.each do |i|
+# (1..1000).each do |i|
 #     increment_x += 0.001
 #     square_x = increment_x ** 2
 #     puts "#{increment_x}  #{square_x}"
@@ -36,7 +36,7 @@ puts '----------------'
 increment_x = 0.000
 square_x = 0.000
 puts "#{increment_x}"
-(1..1000).to_a.each do |i|
+(1..1000).each do |i|
     increment_x += 0.001
     square_x = increment_x ** 2
     puts "#{increment_x}  #{square_x}"

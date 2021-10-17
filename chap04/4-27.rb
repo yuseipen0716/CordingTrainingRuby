@@ -18,7 +18,7 @@ sum = 0
 avg = 0
 # 入力された値まで加算を繰り返す。
 # 合計が1000を超えた場合にはその際に加算した分のnumを引いた値をsumに再代入、平均は前回入力分の数値までで出すので、sumを(i-1)で割る。メッセージを表示してbreakで繰り返しから離脱。
-(1..limit).to_a.each do |i|
+(1..limit).each do |i|
     print "整数 : "
     num = gets.chomp.to_i
     sum += num
