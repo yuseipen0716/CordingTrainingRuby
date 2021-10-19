@@ -20,13 +20,13 @@ end
 #================================================================
 # ここまでは以前の問題と同様
 
-i = 0
-# 変数i countdownと等しくなるまで繰り返し
-for i in i..countdown
-    i += 1
-    # puts countdown -= 1とすると、カウントダウンの初期値がcountdown-1となってしまうため。
-    puts (countdown -= 1) + 1
-end
+# i = 0
+# # 変数i countdownと等しくなるまで繰り返し
+# for i in i..countdown
+#     i += 1
+#     # puts countdown -= 1とすると、カウントダウンの初期値がcountdown-1となってしまうため。
+#     puts (countdown -=) + 1
+# end
 
 
 # 前問同様、eachでも書いてみる。
@@ -35,3 +35,9 @@ end
 #     i += 1
 #     puts (countdown -= 1) + 1
 # end
+
+
+# reviewしたいただいた。for i in ..の書き方をちゃんとわかっていれば、こんなにシンプルにかける！
+for i in 0..countdown
+    puts countdown - i
+end

@@ -28,7 +28,10 @@ avg = 0
     num = gets.chomp.to_i
     sum += num
     avg = sum / i
-    break if num == 0
+    if num == 0
+        avg = sum / (i - 1)
+        break
+    end
 end
 
 # 最初に入力された値（加算する個数）が1未満のときには合計、平均は表示せず、メッセージを返すようにした。

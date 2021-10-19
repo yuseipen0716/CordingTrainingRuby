@@ -7,10 +7,11 @@
 print "何個*を表示しますか: "
 counter = gets.chomp.to_i
 
-if counter > 0
-    show = []
-    show << '*' * counter
+# if counter > 0
+#     show = []
+#     show << '*' * counter
 
-    puts show
-end
+#     puts show
+# end
 
+puts '*' * counter if counter > 0

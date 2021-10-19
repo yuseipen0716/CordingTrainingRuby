@@ -11,7 +11,8 @@ if counter > 0
     i = 1
     # iがcounterになるまで*を改行なしに出力する繰り返し
     for i in i..counter
-        i += 1
+        # i += 1
+        # ↑の記載は不要(review)
         print '*'
     end
 end
