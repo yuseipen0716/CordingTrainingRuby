@@ -23,10 +23,17 @@
 months = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December']
 
 isContinue = 1
+answer = 'default'
 # isContinue == 1の値は本体処理を繰り返し
 while isContinue == 1
     random_month = rand(1..12)
-    answer = 'default'
+    # answer == 'default'つまり初回は繰り返しを抜けて、後の処理へ。
+    # 前回回答したanswerを配列monthsに対してのindexメソッドの引数として渡して戻ってきた値（つまり前回のrandom_month-1の値）が等しいということは、/
+    # /今回出題する問題が前回と同じ月ということになるので、再びrandom_monthを初期化する処理を繰り返して、前回と同じでない月が出題できる場合に後の処理に進むようにした。
+    while answer != 'default' && (random_month - 1) == months.index(answer)
+        random_month = rand(1..12)
+    end
+    #=====出題される月が決定した後の処理======
     # 入力された回答が正解になるまで繰り返し
     until answer == months[random_month - 1]
         print "#{random_month}月 : "
@@ -42,3 +49,9 @@ while isContinue == 1
         break
     end
 end
+
+# 修正コメント
+# 同一月を連続して出題しないという要件が満たされていなかった。
+# 繰り返し処理の外にanswer = 'default'を設定。
+# 繰り返し本体の中にもうひとつwhileかなにかの繰り返し処理を入れる。
+# answerが'default'ではなく、かつ(random_month-1)がmonths.index(answer)と同じ場合に繰り返しrandom_monthの初期化の部分から繰り返しネスト
