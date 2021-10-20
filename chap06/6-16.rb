@@ -4,10 +4,13 @@
 
 # 実行例
 # 英語の曜日名を小文字で入力してください。
-# 水曜日 : wednesday
+# 8月 : August
 # 正解です。もう一度？ 1・・・Yes/0・・・No : 1
-# 月曜日 : monday
-# 正解です。もう一度？ 1・・・Yes/0・・・No : 0
+# 水曜日 : wenesday
+# 違います。
+# どうしますか? 1・・・再入力/0・・・正解を見る : 0
+# 水曜日は'wednesday'です。
+# もう一度？ 1・・・Yes/0・・・No : 0
 
 
 # 処理の流れ
@@ -34,10 +37,25 @@ while isContinue == 1
     until answer == week_en[random_week]
         print "#{week_ja[random_week]} : "
         answer = gets.chomp
-        puts '違います。' if answer != week_en[random_week]
+        # 間違えたあと、どうするか選べるように。
+        if answer != week_en[random_week]
+            puts '違います。' 
+            print "どうしますか? 1・・・再入力/0・・・正解を見る : "
+            action_after_mistake = gets.chomp.to_i
+            # 0を選択した場合には解答を表示して繰り返し処理から離脱。 正解した後の処理(54行目)以降へ
+            if action_after_mistake == 0
+                puts "#{week_ja[random_week]}は'#{week_en[random_week]}'です"
+                break
+            elsif action_after_mistake != 1
+                puts '不正な値が入力されました。'
+                break
+                # 1を選択した場合にはこのif文を抜けて、もう一回untilのループへ。
+            end
+        end
     end
     #=====正解した後の処理======
-    print "正解です。もう一度? 1・・・Yes/0・・・No : "
+    print '正解です。' if answer == week_en[random_week]
+    print "もう一度? 1・・・Yes/0・・・No : "
     isContinue = gets.chomp.to_i
     # 1, 0 以外の値が入力された場合には繰り返しの処理を離脱する。
     if isContinue != 1 && isContinue != 0
