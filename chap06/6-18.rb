@@ -72,6 +72,7 @@ end
 puts '行列aとbの積'
 
 (0..3).each do |l|
+    # c[l]の要素を横並びで表示、c[l+1]となったときに改行文字が入るようにした
     print "\n" if l > 0
     (0..3).each do |m|
         print "  #{c[l][m]}  "
