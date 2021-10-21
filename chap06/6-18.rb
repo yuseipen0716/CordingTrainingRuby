@@ -65,7 +65,10 @@ end
 # 行列aとbの積
 (0..3).each do |i|
     (0..3).each do |j|
-        c[i][j] = (a[i][0] * b[0][j]) + (a[i][1] * b[1][j]) + (a[i][2] * b[2][j])
+        c[i][j] = 0
+        (0..2).each do |k|
+            c[i][j] += a[i][k] * b[k][j]
+        end
     end
 end
 
