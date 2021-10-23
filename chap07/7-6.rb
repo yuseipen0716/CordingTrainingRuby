@@ -6,6 +6,7 @@
 # その月の季節は春です。
 
 def printSeason(m)
+    # case文でmを場合分け
     case m
     when 3..5
         puts 'その季節は春です。'
