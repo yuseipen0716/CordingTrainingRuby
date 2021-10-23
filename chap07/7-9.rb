@@ -17,8 +17,8 @@ def readPlusInt
             print "正の整数値 : "
             num = gets.chomp
         end
-        # num(String)に対してsplitメソッドで数字一文字ずつ分解して、その配列に対してreverseしてからjoinでくっつけて逆順出力。
-        num_reverse = num.split(/(\d)/).reverse.join
+        # num(String)に対してsplitメソッドで一文字ずつ分解して、その配列に対してreverseしてからjoinでくっつけて逆順出力。
+        num_reverse = num.split(//).reverse.join
         puts "逆から読むと#{num_reverse}です。"
         print "もう一度？＜Yes・・・1/No・・・0＞ : "
         isContinue = gets.chomp.to_i
