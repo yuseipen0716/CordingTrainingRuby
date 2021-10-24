@@ -31,10 +31,10 @@ end
 def inverse(x, pos)
     x = x.split(//).reverse
     # 逆順に並べ替えて配列のpos番目の値によって場合分けし、反転させるようにした。
-    if x[pos] == 0
-        x[pos] = 1
-    else
+    if x[pos] == '1'
         x[pos] = 0
+    else
+        x[pos] = 1
     end
     x = x.reverse.join
     # puts x
