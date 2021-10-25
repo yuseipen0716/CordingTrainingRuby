@@ -36,19 +36,16 @@
 # 交換した配列は上から要素を並べて表示する。
 # =====================
 def aryExchng(a, b)
-    # 小さい要素数分の要素を交換する
+    # 小さい要素数分の要素を交換する。要素数の小さい方をlengthという変数に代入して利用する。
     if a.size > b.size
-        (0..b.size-1).each do |m|
-            tmp = a[m]
-            a[m] = b[m]
-            b[m] = tmp
-        end
+        length = b.size
     else
-        (0..a.size-1).each do |n|
-            tmp = a[n]
-            a[n] = b[n]
-            b[n] = tmp
-        end
+        length = a.size
+    end
+    (0..length-1).each do |m|
+        tmp = a[m]
+        a[m] = b[m]
+        b[m] = tmp
     end
     puts '配列aとbの全要素を交換しました。'
     (0..a.size-1).each do |o|
@@ -71,7 +68,7 @@ b = []
 print "配列bの要素数 : "
 element_b = gets.chomp.to_i
 (0..element_b-1).each do |j|
-    print "a[#{j}] : "
+    print "b[#{j}] : "
     b << gets.chomp.to_i
 end
 
