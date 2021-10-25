@@ -35,13 +35,13 @@ end
 print "要素数 : "
 element = gets.chomp.to_i
 
-a = []
+x = []
 (0..element-1).each do |i|
-    print "a[#{i}] : "
-    a << gets.chomp.to_i
+    print "x[#{i}] : "
+    x << gets.chomp.to_i
 end
 
 print "削除する要素のインデックス : "
 remove_index = gets.chomp.to_i
 
-aryOfRmv(a, remove_index)
+aryOfRmv(x, remove_index)
