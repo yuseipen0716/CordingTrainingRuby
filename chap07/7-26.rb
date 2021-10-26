@@ -19,6 +19,10 @@
 # y[6] : 11
 
 def arrayInsOf(a, idx, x)
+    if idx < 0 || idx > a.size
+        puts '不正な値です'
+        return
+    end
     # まず、要素を挿入するとその分だけ要素が増えるので、新しく渡す配列yはa.size個の要素で初期化。
     y = Array.new(a.size)
     # 一旦、配列aの要素をyにコピー（y[6]はnil）
