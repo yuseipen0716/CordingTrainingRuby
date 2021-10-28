@@ -28,8 +28,13 @@ end
 
 print "探す数値 : "
 search = gets.chomp.to_i
-# indexメソッドを使用して要素の番号を出す。
-puts "それはa[#{a.index(search)}]にあります。"
+
+if a.count(search) > 0
+    # indexメソッドを使用して要素の番号を出す。
+    puts "それはa[#{a.index(search)}]にあります。"
+else
+    puts '入力された数値は存在しません'
+end
 
 
 # 最も末尾側に位置する要素を探索
@@ -55,4 +60,10 @@ search_index = nil
     end
 end
 
-puts "それはa[#{search_index}]にあります。"
+if search_index != nil
+    puts "それはa[#{search_index}]にあります。"
+else
+    puts '入力された数値は存在しません'
+end
+
+# line32〜37、63〜67 コードレビューいただいたように、探索できなかった場合の処理を追加しました。
