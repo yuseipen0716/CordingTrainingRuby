@@ -26,7 +26,7 @@ points = []
 end
 
 puts "合計点は#{points.sum}点です。"
-puts "合計点は#{points.sum. / people.to_f}点です。"
-puts "合計点は#{points.max}点です。"
-puts "合計点は#{points.min}点です。"
+puts "平均点は#{points.sum. / people.to_f}点です。"
+puts "最高点は#{points.max}点です。"
+puts "最低点は#{points.min}点です。"
 
