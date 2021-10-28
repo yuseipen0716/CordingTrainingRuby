@@ -24,10 +24,10 @@ puts "英語の月名を入力してください。\nなお、先頭は大文字
 
 months = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December']
 
-isContinue = 1
+continued = 1
 answer = 'default'
 # isContinue == 1の値は本体処理を繰り返し
-while isContinue == 1
+while continued == 1
     random_month = rand(1..12)
     # answer == 'default'つまり初回は繰り返しを抜けて、後の処理へ。
     # 前回回答したanswerを配列monthsに対してのindexメソッドの引数として渡して戻ってきた値（つまり前回のrandom_month-1の値）が等しいということは、/
@@ -44,9 +44,9 @@ while isContinue == 1
     end
     #=====正解した後の処理======
     print "正解です。もう一度? 1・・・Yes/0・・・No : "
-    isContinue = gets.chomp.to_i
+    continued = gets.chomp.to_i
     # 1, 0 以外の値が入力された場合には繰り返しの処理を離脱する。
-    if isContinue != 1 && isContinue != 0
+    if continued != 1 && continued != 0
         puts '不正な値が入力されました。'
         break
     end
