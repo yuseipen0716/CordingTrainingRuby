@@ -38,15 +38,29 @@ c = Array.new(2){Array.new(3)}
 addMatrix(a, b, c)
 
 puts '行列a'
-print "#{a[0]}\n#{a[1]}\n\n"
-
-puts '行列b'
-print "#{b[0]}\n#{b[1]}\n\n"
+(0..a.size-1).each do |i|
+    puts "\n" if i > 0
+    (0..a[0].size-1).each do |j|
+        print "#{a[i][j]}  "
+    end
+end
+puts "\n\n行列b"
+(0..b.size-1).each do |k|
+    puts "\n" if k > 0
+    (0..b[0].size-1).each do |l|
+        print "#{b[k][l]}  "
+    end
+end
 
 # メソッドがreturnで終了した場合にはzの二次元目の配列の要素はすべてnilとなっているので、その場合には行列cの値は出力しないようにする。
 unless c[0].include?(nil)
-    puts '行列c'
-    print "#{c[0]}\n#{c[1]}\n"
+    puts "\n\n行列c"
+(0..b.size-1).each do |m|
+    puts "\n" if m > 0
+    (0..c[0].size-1).each do |n|
+        print "#{c[m][n]}  "
+    end
+end
 else
     puts 'false'
 end
