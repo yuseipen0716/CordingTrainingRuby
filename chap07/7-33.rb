@@ -30,25 +30,57 @@
 # 12 536 -8 7
 
 # 2次元配列y
-# 32 -1     32   45 67
+# 32  -1    32   45 67
 # 535 99999 2
 # 2   5     -123 9
 
 def printArray_1d(a)
+    puts "\n1次元配列x"
+    (0..a.size-1).each do |i|
+        print "#{a[i]} "
+    end
+    puts "\n"
 end
 
 def printArray_2d(a)
+    puts "\n2次元配列x"
+    # 数値の桁数を格納する配列widthを作成。
+    width = Array.new(a.size)
+    add_space = 0
+    max = Array.new(a.size)
+    (0..a.size-1).each do |i|
+        max[i] = a[i].size
+    end
+    (0..a.size-1).each do |i|
+        puts "\n" if i > 0
+        width[i] = Array.new(a[i].size)
+        (0..a[i].size-1).each do |j|
+            # 各列の桁数の最大値を格納する配列max_widthを作成。要素数は配列maxの最大値とする。要素の初期値がnilだと、のちのち値を比較する際に困るため、0とした。
+            max_width = Array.new(max.max, 0)
+            # widthに桁数を格納していく。桁数はa[i][j]の要素をStringに変換した文字数で表現。
+            width[i][j] = a[i][j].to_s.size
+            max_width[j] = width[i][j] if width[i][j] > max_width[j]
+            add_space = (max_width[j] - width[i][j])
+            print "#{a[i][j]} #{' ' * add_space}"
+        end
+    end
+    (0..a.size-1).each do |m|
+        puts "\n" if m > 0
+        (0..a[m].size-1).each do |n|
+            # print "#{a[m][n]} #{' ' * add_space}"
+        end
+    end
 end
 
 # ========1次元配列の処理==========
-print "1次元配列xの要素数 : "
-element = gets.chomp.to_i
-x = Array.new(element)
+# print "1次元配列xの要素数 : "
+# element = gets.chomp.to_i
+# x = Array.new(element)
 
-(0..element-1).each do |i|
-    print "x[#{i}] : "
-    x[i] = gets.chomp.to_i
-end
+# (0..element-1).each do |i|
+#     print "x[#{i}] : "
+#     x[i] = gets.chomp.to_i
+# end
 # ===============================
 
 # ========2次元配列の処理==========
@@ -72,3 +104,6 @@ end
 
 
 # ===============================
+
+# printArray_1d(x)
+printArray_2d(y)
