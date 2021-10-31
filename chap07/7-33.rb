@@ -46,28 +46,29 @@ def printArray_2d(a)
     puts "\n2次元配列x"
     # 数値の桁数を格納する配列widthを作成。
     width = Array.new(a.size)
-    add_space = 0
+    # add_space = 0
     max = Array.new(a.size)
     (0..a.size-1).each do |i|
         max[i] = a[i].size
     end
+    # 各列の桁数の最大値を格納する配列max_widthを作成。要素数は配列maxの最大値とする。要素の初期値がnilだと、のちのち値を比較する際に困るため、0とした。
+    max_width = Array.new(max.max, 0)
     (0..a.size-1).each do |i|
         puts "\n" if i > 0
         width[i] = Array.new(a[i].size)
         (0..a[i].size-1).each do |j|
-            # 各列の桁数の最大値を格納する配列max_widthを作成。要素数は配列maxの最大値とする。要素の初期値がnilだと、のちのち値を比較する際に困るため、0とした。
-            max_width = Array.new(max.max, 0)
             # widthに桁数を格納していく。桁数はa[i][j]の要素をStringに変換した文字数で表現。
             width[i][j] = a[i][j].to_s.size
             max_width[j] = width[i][j] if width[i][j] > max_width[j]
-            add_space = (max_width[j] - width[i][j])
-            print "#{a[i][j]} #{' ' * add_space}"
+            # width[i][j] = (max_width[j] - width[i][j])
+            # print "#{a[i][j]} #{' ' * width[i][j]}"
         end
     end
     (0..a.size-1).each do |m|
         puts "\n" if m > 0
         (0..a[m].size-1).each do |n|
-            # print "#{a[m][n]} #{' ' * add_space}"
+            width[m][n] = (max_width[n] - width[m][n])
+            print "#{a[m][n]} #{' ' * width[m][n]}"
         end
     end
 end
