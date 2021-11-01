@@ -10,7 +10,7 @@
 # 体重 : 72kg
 
 class Human
-    attr_accessor :name, :height, :weight
+    attr_reader :name, :height, :weight
     def initialize(name, height, weight)
         @name = name
         @height = height
