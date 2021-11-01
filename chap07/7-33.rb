@@ -44,44 +44,52 @@ end
 
 def printArray_2d(a)
     puts "\n2次元配列x"
-    # 数値の桁数を格納する配列widthを作成。
+    # 数値の桁数を格納する二次元配列配列widthを作成。二次元目の要素は後で初期化
     width = Array.new(a.size)
-    # add_space = 0
+    # 後で定義する配列max_widthを初期化する際の引数で利用するための配列maxを用意。読み込んだ配列aの各行の列数を格納した配列になる。
     max = Array.new(a.size)
     (0..a.size-1).each do |i|
         max[i] = a[i].size
     end
-    # 各列の桁数の最大値を格納する配列max_widthを作成。要素数は配列maxの最大値とする。要素の初期値がnilだと、のちのち値を比較する際に困るため、0とした。
+    # 各列の桁数の最大値を格納する一次元配列max_widthを作成。要素数は配列maxの最大値とする。要素の初期値がnilだと、のちのち値を比較する際に困るため、0とした。
+    # 最初ここをeach分の中で定義してしまっていたので期待通りの結果が得られず困った。繰り返すたびに初期化されるんだから、そりゃ期待通りには動きませんね。
     max_width = Array.new(max.max, 0)
+
+    # 配列widthとmax_widthに要素を代入していく。
     (0..a.size-1).each do |i|
-        puts "\n" if i > 0
+        # 配列widthの二次元目の要素を初期化。配列aの二次元目の要素数がバラバラなので、ここで初期化することにした。
         width[i] = Array.new(a[i].size)
         (0..a[i].size-1).each do |j|
             # widthに桁数を格納していく。桁数はa[i][j]の要素をStringに変換した文字数で表現。
             width[i][j] = a[i][j].to_s.size
+            # widthの各要素の値をmax_widthの値と比較。widthの値がmax_widthを超える際にはmax_widthの値にwidthの値を代入。
             max_width[j] = width[i][j] if width[i][j] > max_width[j]
-            # width[i][j] = (max_width[j] - width[i][j])
-            # print "#{a[i][j]} #{' ' * width[i][j]}"
         end
     end
+
+    # 数値の先端を揃えるために追加するスペースの数を格納する二次元配列add_spaceを作成
+    add_space = Array.new(a.size)
     (0..a.size-1).each do |m|
         puts "\n" if m > 0
+        add_space[m] = Array.new(a[m].size)
         (0..a[m].size-1).each do |n|
-            width[m][n] = (max_width[n] - width[m][n])
-            print "#{a[m][n]} #{' ' * width[m][n]}"
+            # 配列add_spaceに各列の桁数の最大値からその列の桁数を引いた数値(数値の先端を揃えるために追加するスペース数)を代入
+            add_space[m][n] = (max_width[n] - width[m][n])
+            # スペースを追加して配列aの要素を横並びに表示。
+            print "#{a[m][n]} #{' ' * add_space[m][n]}"
         end
     end
 end
 
 # ========1次元配列の処理==========
-# print "1次元配列xの要素数 : "
-# element = gets.chomp.to_i
-# x = Array.new(element)
+print "1次元配列xの要素数 : "
+element = gets.chomp.to_i
+x = Array.new(element)
 
-# (0..element-1).each do |i|
-#     print "x[#{i}] : "
-#     x[i] = gets.chomp.to_i
-# end
+(0..element-1).each do |i|
+    print "x[#{i}] : "
+    x[i] = gets.chomp.to_i
+end
 # ===============================
 
 # ========2次元配列の処理==========
@@ -106,5 +114,5 @@ end
 
 # ===============================
 
-# printArray_1d(x)
+printArray_1d(x)
 printArray_2d(y)
