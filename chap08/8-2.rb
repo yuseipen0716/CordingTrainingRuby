@@ -9,6 +9,8 @@
 # 身長 : 166cm
 # 体重 : 67kg
 
+# JavaでいうコンストラクタはRubyのinitialize
+
 class Human
     attr_reader :name, :height, :weight
     def initialize(name, height, weight)
