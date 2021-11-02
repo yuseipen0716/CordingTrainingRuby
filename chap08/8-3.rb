@@ -19,15 +19,15 @@ class Car
     end
 
     def get_x
-        puts x
+        x
     end
 
     def get_y
-        puts y
+        y
     end
 
     def remaining_fuel
-        puts fuel
+        fuel
     end
 
     def show_spec
