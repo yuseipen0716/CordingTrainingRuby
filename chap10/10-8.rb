@@ -40,9 +40,25 @@ class Day
     end
 
     # === ある年が閏年かどうかを調べる
-    # def leap?(year)
+    # クラスメソッド
+    def self.leap?(year)
+        if year % 4 == 0 && year % 100 != 0 || year % 400 == 0
+            true
+        else
+            false
+        end
+    end
+    # インスタンスメソッド
+    def self.leap?
+        if self.year % 4 == 0 && year % 100 != 0 || year % 400 == 0
+            true
+        else
+            false
+        end
+    end
 
-    # end
+    # === 年内での経過日数 ===
+    # 処理の流れメモ dateクラスのメソッドを利用してもいいけど、もし自分で書くなら、0..month-2でeachを回して前月分までの日数の合計を出して、今月分は1日から数えた経過日数を出して足し合わせるようにするか。
 
     # === 年月日と曜日を表示する ===
     def show
