@@ -13,7 +13,7 @@
 # 7  5  7
 # 9  6  8
 
-def addMatrix(x, y, z)
+def add_matrix(x, y, z)
     # まずは一次元目の配列の要素数が同じかどうかを評価。違うときはreturn
     if x.size == y.size
         # 一次元目の配列の要素数だけ繰り返し。二次元目の配列の個数が正しいかを評価する。違う場合にはreturn。条件が真になるときはtrueが返されている？
@@ -35,7 +35,7 @@ a = [[1, 2, 3], [4, 5, 6]]
 b = [[6, 3, 4], [5, 1, 2]]
 c = Array.new(2){Array.new(3)}
 
-addMatrix(a, b, c)
+add_matrix(a, b, c)
 
 puts '行列a'
 (0..a.size-1).each do |i|
@@ -64,3 +64,5 @@ end
 else
     puts 'false'
 end
+
+# キャメルケースになっていたメソッド名をスネークケースに修正しました。
