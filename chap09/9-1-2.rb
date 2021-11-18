@@ -43,12 +43,17 @@ class Coordinate
     end
 end
 
+# def comp_coordinate(c1, c2)
+#     if c1.get_x == c2.get_x && c1.get_y == c2.get_y
+#         true
+#     else
+#         false
+#     end
+# end
+
+# ↑のようにif文で分岐しなくてもこのように記述するだけでOK
 def comp_coordinate(c1, c2)
-    if c1.get_x == c2.get_x && c1.get_y == c2.get_y
-        true
-    else
-        false
-    end
+    c1.get_x == c2.get_x && c1.get_y == c2.get_y
 end
 
 puts '座標pを入力せよ。'
@@ -80,7 +85,7 @@ else
     puts 'pとqは等しくありません。'
 end
 
-if comp_coordinate(p, q) == true
+if comp_coordinate(p, q)
     puts 'pとqは等しいです。'
 else
     puts 'pとqは等しくありません。'
