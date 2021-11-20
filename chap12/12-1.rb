@@ -60,10 +60,8 @@ class ExCar < Car
     end
 
     def show_spec
-        puts "名前 : #{@name}"
-        puts "車幅 : #{@width} mm"
-        puts "車高 : #{@height} mm"
-        puts "車長 : #{@length} mm"
+        # superでスーパークラスの処理を呼んでいる。
+        super
         puts "総走行距離 : #{self.get_total_mileage} km"
     end
 
@@ -76,9 +74,7 @@ class ExCar < Car
             puts '燃料が足りません。'
             return
         else # ガソリンが足りるなら以下のような処理を。
-            @x += dx
-            @y += dy
-            @fuel -= distance
+            super
             # 総走行距離にdistanceをたす。
             @total_mileage += distance
         end
