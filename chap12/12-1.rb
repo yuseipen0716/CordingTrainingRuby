@@ -92,8 +92,8 @@ class ExCar < Car
 end
 
 # 動作テスト
-car1 = ExCar.new('ビッツ', 1660, 1500, 3640, 0, 0, 30.0, Date.today)
+# car1 = ExCar.new('ビッツ', 1660, 1500, 3640, 0, 0, 30.0, Date.today)
 
-car1.show_spec
-car1.move(3.0, 4.0)
-car1.show_spec
+# car1.show_spec
+# car1.move(3.0, 4.0)
+# car1.show_spec
