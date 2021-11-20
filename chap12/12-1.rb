@@ -50,14 +50,8 @@ end
 
 class ExCar < Car
     def initialize(name, width, height, length, x, y, fuel, purchase_day)
-        @name = name
-        @width = width
-        @height = height
-        @length = length
-        @x = x
-        @y = y
-        @fuel = fuel
-        @purchase_day = purchase_day
+        # superでスーパークラスの処理を呼んでいる。
+        super(name, width, height, length, x, y, fuel, purchase_day)
         @total_mileage = 0.0
     end
 
