@@ -20,9 +20,18 @@ s4 = ""
 (5..7).each do |i|
     s4 += c[i]
 end
+# 滅多に使わないみたい。
 s5 = String.new('XYZ')
 print "文字列 : "
 s6 = gets.chomp
+
+# おまけ
+# joinメソッドで配列の要素を連結して文字列に
+s7 = [10, 20, 30].join
+# to_sメソッドを使って、Integer → String
+s8 = 123.to_s
+# ダブルクオートと\uを使用してUnicodeのコードポイントから文字列を作成 あいう
+s9 = "\u3042\u3044\u3046"
 
 puts "s1 = #{s1}"
 puts "s2 = #{s2}"
@@ -30,3 +39,6 @@ puts "s3 = #{s3}"
 puts "s4 = #{s4}"
 puts "s5 = #{s5}"
 puts "s6 = #{s6}"
+puts "s7 = #{s7}"
+puts "s8 = #{s8}"
+puts "s9 = #{s9}"
