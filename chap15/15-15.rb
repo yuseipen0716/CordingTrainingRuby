@@ -64,5 +64,63 @@ class Calender
     end
 end
 
-new_day = Calender.new
-new_day.put_calender
+class Calender_yearly < Calender
+    def initialize(year)
+        @year = year
+    end
+
+    # === カレンダー表示のための準備 ===
+    def put_calender_yearly
+        puts "#{@year}年#{@month}月のカレンダー"
+        (1..12).each do |i|
+            # y年m月1日の曜日
+            first_day_of_week = day_of_week(@year, i, 1)
+
+            # y年m月の日数
+            month_day_ym = month_day(@year, i)
+
+            puts "#{i}月"
+
+            puts ' 日 月 火 水 木 金 土 '
+            puts '---------------------'
+
+            # 月の初日の曜日が正しく表示できるよう、1日の左にスペースを入れる。
+            print "#{'   ' * first_day_of_week}"
+
+            (1..month_day_ym).each do |k|
+                printf("%3d", k)
+                print "\n" if day_of_week(@year, i, k) == 6 || k == month_day_ym
+            end
+            puts "\n" if i < 12
+        end
+    end
+end
+
+class Calender_ym < Calender
+    def initialize(year, month)
+        @year = year
+        @month = month
+    end
+end
+
+# new_day = Calender.new
+# new_day.put_calender
+
+case ARGV.size
+when 0
+    new_day = Calender.new
+    new_day.put_calender
+when 1
+    if ARGV[0].to_i < 0
+        puts '年の指定が不正です。'
+        return
+    end
+    new_year = Calender_yearly.new(ARGV[0].to_i)
+    new_year.put_calender_yearly
+else
+    if ARGV.size > 2 || ARGV[0].to_i < 0 ||ARGV[1].to_i < 0 || ARGV[1].to_i > 12
+        puts '値の指定が不正です。'
+    end
+    new_ym = Calender_ym.new(ARGV[0].to_i, ARGV[1].to_i)
+    new_ym.put_calender
+end
