@@ -41,7 +41,7 @@ class Calender
         end
     end
 
-    # === カレンダー表示のための準備 ===
+    # === カレンダー表示 ===
     def put_calender
         # y年m月1日の曜日
         first_day_of_week = day_of_week(@year, @month, 1)
@@ -58,7 +58,9 @@ class Calender
         print "#{'   ' * first_day_of_week}"
 
         (1..month_day_ym).each do |i|
+            # 3桁0埋めなしで出力
             printf("%3d", i)
+            # 最終日を出力したら、改行文字をいれる。
             print "\n" if day_of_week(@year, @month, i) == 6 || i == month_day_ym
         end
     end
@@ -69,7 +71,7 @@ class Calender_yearly < Calender
         @year = year
     end
 
-    # === カレンダー表示のための準備 ===
+    # === カレンダー表示===
     def put_calender_yearly
         puts "#{@year}年#{@month}月のカレンダー"
         (1..12).each do |i|
@@ -87,9 +89,10 @@ class Calender_yearly < Calender
             # 月の初日の曜日が正しく表示できるよう、1日の左にスペースを入れる。
             print "#{'   ' * first_day_of_week}"
 
-            (1..month_day_ym).each do |k|
-                printf("%3d", k)
-                print "\n" if day_of_week(@year, i, k) == 6 || k == month_day_ym
+            (1..month_day_ym).each do |j|
+                # 3桁0埋めなしで出力
+                printf("%3d", j)
+                print "\n" if day_of_week(@year, i, j) == 6 || j == month_day_ym
             end
             puts "\n" if i < 12
         end
@@ -106,6 +109,7 @@ end
 # new_day = Calender.new
 # new_day.put_calender
 
+# コマンドライン引数がなければ当月のカレンダー表示、年のみ渡されていればCalender_yearlyクラスでインスタンスを作成。年、月が渡されていればCalender_ymクラスのインスタンスを作成。
 case ARGV.size
 when 0
     new_day = Calender.new
