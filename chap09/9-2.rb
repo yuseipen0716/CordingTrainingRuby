@@ -26,11 +26,8 @@ class Coordinate
     end
     # 座標pとqが等しいかどうかを判断する際に、objectの等価式で比較するのではなく、X座標とY座標の値がそれぞれ等しいかどうかで等価性を評価するインスタンスメソッド
     def equal_to(c)
-        if @x == c.get_x && @y == c.get_y
-            true
-        else
-            false
-        end
+        # シンプルに書き直しました（レビュー)
+        @x == c.get_x && @y == c.get_y
     end
 end
 

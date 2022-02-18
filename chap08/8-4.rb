@@ -50,37 +50,56 @@ def move_test
     sfc = gets.chomp.to_f
 
     car_test = Car.new(name, number, width, height, length, 0, 0, tankage, fuel, sfc)
-    puts '現在地 : (0.00, 0.00)'
-    puts "残り燃料 : #{car_test.remaining_fuel}"
-    print "移動しますか[0・・・No/1・・・Yes] : "
-    switch = gets.chomp.to_i
-    if switch == 0
-        return
-    elsif switch != 0 && switch != 1
-        puts '不正な値が入力されました。'
-        return
-    else
-    end
-    # 1を入力されている間は繰り返し
-    while switch == 1
+    # puts '現在地 : (0.00, 0.00)'
+    # puts "残り燃料 : #{car_test.remaining_fuel}"
+    # print "移動しますか[0・・・No/1・・・Yes] : "
+    # switch = gets.chomp.to_i
+    # if switch == 0
+    #     return
+    # elsif switch != 0 && switch != 1
+    #     puts '不正な値が入力されました。'
+    #     return
+    # else
+    # end
+    # # 1を入力されている間は繰り返し
+    # while switch == 1
+    #     print "X方向の移動距離 : "
+    #     dx = gets.chomp.to_f
+    #     print "Y方向の移動距離 : "
+    #     dy = gets.chomp.to_f
+    #     car_test.move(dx, dy)
+
+    #     puts "現在地 : (#{car_test.get_x}, #{car_test.get_y})"
+    #     puts "残り燃料 : #{car_test.remaining_fuel}"
+
+    #     print "移動しますか[0・・・No/1・・・Yes] : "
+    #     switch = gets.chomp.to_i
+    #     if switch == 0
+    #         return
+    #     elsif switch != 0 && switch != 1
+    #         puts '不正な値が入力されました。'
+    #         return
+    #     else
+    #     end
+    # end
+    while true
+        puts "現在地 : (#{car_test.get_x}, #{car_test.get_y})"
+        puts "残り燃料 : #{car_test.remaining_fuel}"
+    
+        print "移動しますか[0・・・No/1・・・Yes] : "
+        switch = gets.chomp.to_i
+        break if switch == 0
+        break if switch != 0 && switch != 1
+        
         print "X方向の移動距離 : "
         dx = gets.chomp.to_f
         print "Y方向の移動距離 : "
         dy = gets.chomp.to_f
         car_test.move(dx, dy)
-
-        puts "現在地 : (#{car_test.get_x}, #{car_test.get_y})"
-        puts "残り燃料 : #{car_test.remaining_fuel}"
-
-        print "移動しますか[0・・・No/1・・・Yes] : "
-        switch = gets.chomp.to_i
-        if switch == 0
-            return
-        elsif switch != 0 && switch != 1
-            puts '不正な値が入力されました。'
-            return
-        else
-        end
     end
 end
 move_test
+
+
+# レビューいただいた。while true以下のように記述すればだいぶシンプルに。
+# while trueの部分はRubyの真偽値において、「nilまたはfalse以外は真とする」という性質を利用して、switchが0または0でも1でもなくてbreakする時以外は内部の処理を繰り返す、という理解で良いのだろうか。
